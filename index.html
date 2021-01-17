@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        .main{
+            text-align: center;
+            background-color: rgb(190, 231, 194);
+            border: solid black .5pc;
+        }
+
+        .float-container{
+            padding: 10px;
+            background-color: burlywood;
+            padding: 10px;
+            height: 600pxpx;
+        }
+
+        .float-child{
+            width: 50%;
+            float: left;
+             
+        }
+
+        .projects{
+            background-color: rgb(219, 213, 121);
+            padding: 5pc;
+            height: 2500;
+        }
+        .twitter_feeds{
+            background-color: rgb(228, 165, 165);
+            padding: 5pc;
+            height: 2500;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="loading">
+        loading....
+    </div>
+
+    <div class="main" id="mainContainer" hidden>
+        <img
+            height="200"
+            width="200"
+            id="profileImage"
+        >
+        <h2 id="fullName"></h2>
+        <p id="bio"></p>
+
+        <p>Check my <a id="githubLink">Github </a> Repositories</p>    
+
+       
+    </div>
+    <script>
+        fetch("https://api.github.com/users/Himalayan-Glory")
+        .then(response=>response.json())
+        .then(function(data){
+            console.log(data)
+            
+            document.getElementById('fullName').textContent=data['name']
+   
+            document.getElementById('bio').textContent=data['bio']
+
+            document.getElementById('githubLink').href=data['html_url']
+        
+            document.getElementById('profileImage').src=data['avatar_url']
+            
+            document.getElementById('mainContainer').hidden=false
+   
+            document.getElementById('loading').hidden=true
+    
+       })
+    
+    </script>    
+    
+
+
+    <div class="float-container">
+      <div class="float-child">
+         <div class="projects">
+
+             <h2>My Projects</h2>
+             <div style="clear: both">
+                <h4 style="float: left " >Total Public Repositories: </h4> 
+                 <h3 style="float: right;padding: 10px; border: 2px solid red;border-radius: 50%;" id="total_repos"></h3>
+
+             </div>
+             <br>
+             <h5 id="repos_url"></h5>
+             <h5 id="ttl_repo"></h5>
+
+             <br>    
+                <p> 
+                   <a href="https://github.com/Himalayan-Glory/Basic-Plots-for-Data-Visualization" >Project 1:</a> 
+                   <h5> 
+                       <a id="githubLink_1"> </a>
+                   </h5>
+                </p> 
+                   
+                <br>
+
+
+
+                <p> 
+
+                 <a href="https://github.com/Himalayan-Glory/Breast-Cancer-Detection-a-case-study-on-UCI-Breast-Cancer-Diagnostic-Dataset">Project 2:</a>  
+                 <h5>
+                 <a id="githubLink_2"> 
+                     
+                </a> 
+              </h5>
+              </p> 
+              <br>
+                
+                <p> 
+                    <a href="https://github.com/Himalayan-Glory/cs230-code-examples">Project 3:</a>  
+                <h5>
+                    <a id="githubLink_3"> 
+                        
+                   </a>
+                </h5> 
+            </p> 
+             
+            <br>
+            <p> 
+                <a href="https://github.com/Himalayan-Glory/deep-learning-v2-pytorch">Project 4: </a> 
+               <h5> 
+                   <a id="githubLink_4"> </a> 
+               </h5>
+            </p> 
+               
+            <br>
+            <p> 
+
+                <a href="https://github.com/Himalayan-Glory/Face-Detection-on-Videos-using-OpenCV-DNN">Project 5:</a>  
+             <h5>
+             <a id="githubLink_5"> 
+                 
+            </a> 
+        </h5>
+        </p> 
+
+        <br>
+            <p> 
+                <a href="https://github.com/Himalayan-Glory/First_Deep_Learning_Model_in_Python_using_Keras">Project 6:</a>    
+            <h5>
+                <a id="githubLink_6"> 
+                    
+               </a>
+            </h5> 
+        </p> 
+
+        <br>
+        <p> 
+            <a href="https://github.com/Himalayan-Glory/Geospatial-Data-Visualization-using-Folium">Project 7: </a>
+           <h5> 
+               <a id="githubLink_7"> </a> 
+           </h5>
+        </p> 
+           
+        <br>
+        <p> 
+
+            <a href="https://Himalayan-Glory.github.io">Project 8:</a>  
+         <h5>
+         <a id="githubLink_8"> 
+             
+        </a> 
+    </h5>
+    </p> 
+    <br>
+        
+        <p> 
+            <a href="https://github.com/Himalayan-Glory/mit-deep-learning">Project 9:</a>  
+        <h5>
+            <a id="githubLink_9"> 
+                
+           </a>
+        </h5> 
+    </p> 
+    <br>
+
+
+
+    <p> 
+        <a href="https://github.com/Himalayan-Glory/MLP-for-MNIST-Handwritten-Digit-Recognition">Project 10: </a> 
+       <h5> 
+           <a id="githubLink_10"> </a> 
+       </h5>
+    </p> 
+       
+    <br>
+    <p> 
+
+        <a href="https://github.com/Himalayan-Glory/Nepali-n-grams-model-using-nltk-Simple-Example">Project 11:</a> 
+     <h5>
+     <a id="githubLink_11"> 
+         
+    </a> 
+</h5>
+</p> 
+
+<br>
+    <p> 
+        <a href="https://github.com/Himalayan-Glory/Nepali-News-Classifier">Project 12:</a>  
+    <h5>
+        <a id="githubLink_12"> 
+            
+       </a>
+    </h5> 
+</p> 
+ 
+<br>
+<p> 
+    <a href="https://github.com/Himalayan-Glory/Nepali_Text_Summarization_Extractive">Project 13:</a>  
+   <h5> 
+       <a id="githubLink_13"> </a> 
+   </h5>
+</p> 
+   
+<br>
+<p> 
+
+    <a href="https://github.com/Himalayan-Glory/Nepali_Word2Vec_Model_Making">Project 14: </a>
+ <h5>
+ <a id="githubLink_14"> 
+     
+</a> 
+</h5>
+</p> 
+
+<br>
+<p> 
+    <a href="https://github.com/Himalayan-Glory/News_Extraction_from_HTMLs_and_Dataset_Making">Project 15:</a>  
+<h5>
+    <a id="githubLink_15"> 
+        
+   </a>
+</h5> 
+</p> 
+
+<br>
+<p> 
+    <a href="https://github.com/Himalayan-Glory/OOP_in_Python_Basics">Project 16: </a>
+<h5> 
+   <a id="githubLink_16"> </a> 
+</h5>
+</p> 
+<br>
+
+<p> 
+    <a href="https://github.com/Himalayan-Glory/Python-Dictionary-Basics">Project 17: 
+    </a>
+<h5>
+<a id="githubLink_17"> 
+ 
+</a> 
+</h5>
+</p> 
+<br>
+
+<p> 
+    <a href="https://github.com/Himalayan-Glory/Simple-Analog-Clock-with-Basics-of-js-css">Project 18: 
+    </a>
+<h5>
+<a id="githubLink_18"> 
+    
+</a>
+</h5> 
+</p> 
+<br>
+
+
+<p> 
+    <a href="https://github.com/Himalayan-Glory/TensorFlow-Examples">    Project 19: 
+    </a>
+   <h5> 
+       <a id="githubLink_19"> </a> 
+   </h5>
+</p> 
+
+
+
+<br>
+            </div>
+
+              
+             
+             <script>
+                 fetch("https://api.github.com/users/Himalayan-Glory")
+                .then(response=>response.json())
+                .then(function(data){
+                    console.log(data)
+                    document.getElementById('total_repos').textContent=data['public_repos']
+
+
+                    fetch("https://api.github.com/users/Himalayan-Glory/repos")
+                    .then(response=>response.json())
+                    .then(function(data_1){
+                        console.log(data_1)
+
+                       
+                        let t_repo=data['public_repos']
+
+                        document.getElementById('githubLink_1').textContent=data_1['0']['name']
+
+                        document.getElementById('githubLink_2').textContent=data_1['1']['name']
+
+                        document.getElementById('githubLink_3').textContent=data_1['2']['name']
+                       
+                        document.getElementById('githubLink_4').textContent=data_1['3']['name']
+
+                        document.getElementById('githubLink_5').textContent=data_1['4']['name']
+
+                        document.getElementById('githubLink_6').textContent=data_1['5']['name']
+                       
+
+                        document.getElementById('githubLink_7').textContent=data_1['6']['name']
+
+                        document.getElementById('githubLink_8').textContent=data_1['7']['name']
+
+                        document.getElementById('githubLink_9').textContent=data_1['8']['name']
+                       
+                        document.getElementById('githubLink_10').textContent=data_1['9']['name']
+
+                        document.getElementById('githubLink_11').textContent=data_1['10']['name']
+
+                        document.getElementById('githubLink_12').textContent=data_1['11']['name']
+                       
+
+                        document.getElementById('githubLink_13').textContent=data_1['12']['name']
+
+                        document.getElementById('githubLink_14').textContent=data_1['13']['name']
+
+                        document.getElementById('githubLink_15').textContent=data_1['14']['name']
+                       
+                        document.getElementById('githubLink_16').textContent=data_1['15']['name']
+
+                        document.getElementById('githubLink_17').textContent=data_1['16']['name']
+
+                        document.getElementById('githubLink_18').textContent=data_1['17']['name']
+                       
+
+                        document.getElementById('githubLink_19').textContent=data_1['18']['name']
+
+                    })
+                            
+               })
+
+                </script>
+    </div>
+
+
+    <div class="float-child">
+       <div class="twitter_feeds">
+
+        <h2> Follow me on Twitter</h2>
+        <p>
+            <a href="https://twitter.com/himalayan_glory?ref_src=twsrc%5Etfw"
+             class="twitter-follow-button" data-size="large" data-show-count="false">
+             Follow @himalayan_glory
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>        
+        </p>  
+
+        <a class="twitter-timeline" data-width="500" data-height="2300"
+         href="https://twitter.com/himalayan_glory?ref_src=twsrc%5Etfw">Tweets by himalayan_glory</a> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+       
+
+       </div>
+    </div>
+</div>
+
+
+</body>
+</html>
